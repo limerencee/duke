@@ -2,6 +2,7 @@ package duke.command;
 
 import duke.command.list.DukeCommandListAll;
 import duke.command.list.DukeCommandListFind;
+import duke.command.list.DukeCommandListReminders;
 import duke.util.DukeStorage;
 import duke.util.DukeTaskList;
 import duke.util.ui.DukeUiMessages;
@@ -27,6 +28,8 @@ public class DukeCommandList extends DukeCommand {
             new DukeCommandListAll(inputTokens).execute(tasks, ui, storage);
         } else if (inputTokens[0].toLowerCase().equals("find")) {
             new DukeCommandListFind(inputTokens).execute(tasks, ui, storage);
+        } else if (inputTokens[0].toLowerCase().equals("reminders")) {
+            new DukeCommandListReminders(inputTokens).execute(tasks, ui, storage);
         }
     }
 }

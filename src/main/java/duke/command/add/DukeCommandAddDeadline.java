@@ -43,6 +43,7 @@ public class DukeCommandAddDeadline extends DukeCommandAdd {
                 DukeTaskDeadline dukeDeadline = new DukeTaskDeadline(deadlineTaskName,
                         DukeParser.formatDate(deadlineParameterString));
                 tasks.addToDukeTasks(dukeDeadline, ui, storage);
+                tasks.initDeadlines();
             } catch (DateTimeParseException ex) {
                 ui.displayInvalidDateFormat();
             }

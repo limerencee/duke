@@ -70,6 +70,7 @@ public class DukeUi extends Application {
         duke = new Duke(Duke.DUKE_TASK_FILE_PATH);
         storage = duke.getStorage();
         tasks = duke.getTasks();
+        tasks.initDeadlines();
         ui = duke.getUi();
         ui.initUiComponents(this);
     }
@@ -153,6 +154,9 @@ public class DukeUi extends Application {
 
         //Print the welcome logo
         ui.displayWelcomeMessage();
+
+        //Prints approaching deadlines
+        tasks.displayDukeDeadlines(ui);
     }
 
     /**

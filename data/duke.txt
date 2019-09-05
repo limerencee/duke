@@ -1,5 +1,7 @@
 T | 0 | Test adding todo task.
-D | 0 | Test adding deadline | 18th of October 2019, 7:30PM
+D | 1 | Test adding deadline | 18th of October 2019, 7:30PM
 E | 0 | Test adding event | i3 Auditorium
 D | 0 | something | 10th of February 2000, 10:00AM
-T | 0 | javafx is nasty
+T | 1 | javafx is nasty
+D | 1 | abc | 6th of September 2019, 10:00AM
+D | 1 | aaa | 7th of September 2019, 10:00AM

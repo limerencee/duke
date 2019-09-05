@@ -19,11 +19,11 @@ import java.util.Optional;
 
 public class DukeParser {
 
-    private static final String DUKE_DATETIME_INPUT_FORMAT = "d/M/yyyy HHmm";
-    private static final String DUKE_DATETIME_OUTPUT_FORMAT = "MMMM uuuu, h:mma";
+    public static final String DUKE_DATETIME_INPUT_FORMAT = "d/M/yyyy HHmm";
+    public static final String DUKE_DATETIME_OUTPUT_FORMAT = "MMMM uuuu, h:mma";
 
     private enum DukeCommandEnum {
-        BYE, CLEAR, DEADLINE, DELETE, DONE, EVENT, FIND, LIST, TODO
+        BYE, CLEAR, DEADLINE, DELETE, DONE, EVENT, FIND, LIST, REMINDERS, TODO
     }
 
     /**
@@ -55,22 +55,13 @@ public class DukeParser {
      * {@link #DUKE_DATETIME_OUTPUT_FORMAT}
      *
      * @param input Date-time String in the format "d/MM/uuuu HHmm". E.g. "2/12/2019 1800".
-     * @return Date-time String in the format: "ddth of MM uuuu, h:mma". E.g. "2nd of December 2019, 6:00PM".
+     * @return Date-time String in the format: "ddth of MMMM uuuu, h:mma". E.g. "2nd of December 2019, 6:00PM".
      * @throws DateTimeParseException If the input String does not match the required format.
      */
     public static String formatDate(String input) throws DateTimeParseException {
         assert !input.equals("");
-        Map<Long, String> ordinalNumbers = new HashMap<>(31);
-        ordinalNumbers.put(1L, "1st");
-        ordinalNumbers.put(2L, "2nd");
-        ordinalNumbers.put(3L, "3rd");
-        ordinalNumbers.put(21L, "21st");
-        ordinalNumbers.put(22L, "22nd");
-        ordinalNumbers.put(23L, "23rd");
-        ordinalNumbers.put(31L, "31st");
-        for (long d = 1; d <= 31; d++) {
-            ordinalNumbers.putIfAbsent(d, "" + d + "th");
-        }
+
+        Map<Long, String> ordinalNumbers = getOrdinalNumbersList();
 
         DateTimeFormatter dayOfMonthFormatter = new DateTimeFormatterBuilder()
                 .appendText(ChronoField.DAY_OF_MONTH, ordinalNumbers)
@@ -97,6 +88,26 @@ public class DukeParser {
             }
         }
         return -1;
+    }
+
+    /**
+     * Generates and returns a Map of the days of month mapped to the days of month with its suffix.
+     *
+     * @return Map which maps days of month to the days of month with its suffix.
+     */
+    public static Map<Long, String> getOrdinalNumbersList() {
+        Map<Long, String> ordinalNumbers = new HashMap<>(31);
+        ordinalNumbers.put(1L, "1st");
+        ordinalNumbers.put(2L, "2nd");
+        ordinalNumbers.put(3L, "3rd");
+        ordinalNumbers.put(21L, "21st");
+        ordinalNumbers.put(22L, "22nd");
+        ordinalNumbers.put(23L, "23rd");
+        ordinalNumbers.put(31L, "31st");
+        for (long d = 1; d <= 31; d++) {
+            ordinalNumbers.putIfAbsent(d, "" + d + "th");
+        }
+        return ordinalNumbers;
     }
 
     /**
@@ -134,6 +145,7 @@ public class DukeParser {
 
             case FIND:
             case LIST:
+            case REMINDERS:
                 return Optional.of(new DukeCommandList(inputTokens));
 
             default:
