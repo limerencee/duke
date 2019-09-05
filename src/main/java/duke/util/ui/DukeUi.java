@@ -125,6 +125,7 @@ public class DukeUi extends Application {
 
     /**
      * Prepares the main application GUI window.
+     *
      * @param stage Stage object that will be run with.
      */
     private void prepareStage(Stage stage) {
@@ -140,6 +141,7 @@ public class DukeUi extends Application {
      * Duke Program entry point. Initializes the main window UI, as well as the underlying logic components.
      * The event handling is also initialized. Finally, the program will print the welcome message and continuously
      * wait for user input.
+     *
      * @param stage Stage object that will be run with.
      */
     @Override
@@ -155,6 +157,7 @@ public class DukeUi extends Application {
 
     /**
      * Adds the specified String into the dialog container as a Label.
+     *
      * @param input String to add to the dialog container as a Label.
      */
     public void addAsLabelToDisplay(String input) {

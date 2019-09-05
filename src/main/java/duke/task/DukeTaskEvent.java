@@ -6,6 +6,7 @@ public class DukeTaskEvent extends DukeTask {
 
     /**
      * Constructor sets the Task description and the event location. The taskType is set to "E".
+     *
      * @param taskName Task description of the {@link DukeTask}
      * @param taskLocation String containing the Task location.
      */
@@ -17,6 +18,7 @@ public class DukeTaskEvent extends DukeTask {
     /**
      * Constructor that takes in the task name followed by a boolean whether a task is complete, followed by the
      * task type. This constructor is called during the tasklist reconstruction phase when reading from the data file.
+     *
      * @param taskName Task description of the {@link DukeTask}
      * @param isComplete if the task is complete or not.
      * @param taskLocation String containing the Task deadline in the required format.
@@ -28,6 +30,7 @@ public class DukeTaskEvent extends DukeTask {
 
     /**
      * Gets the location String of this event task.
+     *
      * @return String containing the event.
      */
     public String getTaskLocation() {
@@ -37,6 +40,7 @@ public class DukeTaskEvent extends DukeTask {
     /**
      * Prints out this event Task in the format.
      * [E][x] taskName (at: taskLocation)
+     *
      * @return The String formatted as above.
      */
     @Override

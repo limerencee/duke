@@ -43,6 +43,7 @@ public class DukeUiMessages {
 
     /**
      * Initializes the ui context to the main GUI object.
+     *
      * @param ui GUI object for setting the context.
      */
     public void initUiComponents(DukeUi ui) {
@@ -51,6 +52,7 @@ public class DukeUiMessages {
 
     /**
      * Takes an input String and wrap it with "______" separator before returning the new updated String.
+     *
      * @param input String to wrap the separators around.
      * @return String that is wrapped around the separators.
      */
@@ -80,6 +82,7 @@ public class DukeUiMessages {
     /**
      * Prints supplied input wrapped with "______" separator.
      * The input is first formatted through {@link #encapsulateOutputWithSeparator(String)}.
+     *
      * @param input String to be displayed to the user.
      */
     public void displayToUser(String input) {
@@ -89,6 +92,7 @@ public class DukeUiMessages {
 
     /**
      * Prints supplied input in the supplied raw format
+     *
      * @param input String to be displayed to the user without the separator formatting.
      */
     public void displayToUserUnformatted(String input) {

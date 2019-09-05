@@ -29,6 +29,7 @@ public class DukeParser {
     /**
      * Concatenates the input String[] from the specified starting index, with a space delimiter between each token
      * with the exception of the last token. Returns the concatenated String.
+     *
      * @param inputTokens Input String array to concatenate from.
      * @param startIndex Starting index (inclusive) to start concatenating from.
      * @param endIndex Ending index (inclusive) to end concatenating at.
@@ -52,6 +53,7 @@ public class DukeParser {
      * LocalDateTime object. Then, depending on the day of the month, there will be a suffix at the end. For example,
      * 1st, 2nd, 3rd, 4th, etc. This LocalDateTime object is then formatted to the format
      * {@link #DUKE_DATETIME_OUTPUT_FORMAT}
+     *
      * @param input Date-time String in the format "d/MM/uuuu HHmm". E.g. "2/12/2019 1800".
      * @return Date-time String in the format: "ddth of MM uuuu, h:mma". E.g. "2nd of December 2019, 6:00PM".
      * @throws DateTimeParseException If the input String does not match the required format.
@@ -83,6 +85,7 @@ public class DukeParser {
 
     /**
      * Gets the starting index of the parameter of the supplied flag in the input String array.
+     *
      * @param inputTokens Array of String to check for if the flag exists.
      * @param flag Exact String to look for.
      * @return Starting index of the flag's parameter, -1 if flag is not found in the array.
@@ -103,6 +106,7 @@ public class DukeParser {
      * {@link DukeCommandList} class will be instantiated and returned. If the command is to "BYE", a
      * {@link DukeCommandExit} class will be instantiated and returned. An Optional.empty() will be returned if the
      *     user input cannot be parsed.
+     *
      * @param input Raw user input String obtained from the input TextField.
      * @param ui Instance of {@link DukeUiMessages} which will show output to the user.
      * @return Optional&lt;DukeCommand&gt; which is empty if the user input cannot be parsed, or a {@link DukeCommand}

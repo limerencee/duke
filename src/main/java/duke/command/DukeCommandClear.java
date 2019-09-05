@@ -5,6 +5,9 @@ import duke.util.DukeTaskList;
 import duke.util.ui.DukeUi;
 import duke.util.ui.DukeUiMessages;
 
+/**
+ * Clears the GUI output text box.
+ */
 public class DukeCommandClear extends DukeCommand {
     /**
      * @param tasks Instance of {@link DukeTaskList} which contains an existing list of {@link duke.task.DukeTask}.
@@ -17,6 +20,7 @@ public class DukeCommandClear extends DukeCommand {
 
     /**
      * Clears the text area in the GUI.
+     *
      * @param gui Main GUI window with the text region to clear.
      */
     public void execute(DukeUi gui) {

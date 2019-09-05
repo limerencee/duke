@@ -16,8 +16,7 @@ public class DukeTaskList {
 
     /**
      * This constructor is used if a new List&lt;duke.task.DukeTask&gt; of initial capacity of
-     * {@link #DUKE_MAXIMUM_TASKS} is
-     * to be instantiated.
+     * {@link #DUKE_MAXIMUM_TASKS} is to be instantiated.
      */
     public DukeTaskList() {
         this.userDukeTasks = new ArrayList<>(DUKE_MAXIMUM_TASKS);
@@ -26,6 +25,7 @@ public class DukeTaskList {
 
     /**
      * This constructor is used if an existing List&lt;duke.task.DukeTask&gt; is to be used.
+     *
      * @param userDukeTasks An existing and initialized List&lt;duke.task.DukeTask&gt; to be used.
      */
     public DukeTaskList(List<DukeTask> userDukeTasks) {
@@ -37,6 +37,7 @@ public class DukeTaskList {
      * Creates a new duke.task.DukeTask and adds it into the current list of user {@link duke.task.DukeTask}.
      * The specified input is also mirrored to the user. The list of user {@link duke.task.DukeTask}
      * is then saved to the hard disk via {@link DukeStorage#save}.
+     *
      * @param inputTask User specified input that will be the name of the {@link duke.task.DukeTask}
      *                  to be added to the current list of {@link duke.task.DukeTask}.
      * @param ui duke.util.ui.DukeUiMessages object for displaying output to the user.
@@ -58,6 +59,7 @@ public class DukeTaskList {
 
     /**
      * Deletes the specified task index.
+     *
      * @param taskIndexString Raw String index of the task to be deleted, following the printed list index from
      *                        the "list" command.
      * @param ui duke.util.ui.DukeUiMessages object for displaying output to the user.
@@ -88,6 +90,7 @@ public class DukeTaskList {
      * Displays the user-supplied list of tasks in a formatted style. This method will prepare the list by looping
      * through the List of tasks and printing each task with its index. Then it will call
      * {@link DukeUiMessages#displayToUser(String)} to display the final formatted list.
+     *
      * @param ui duke.util.ui.DukeUiMessages object for displaying output to the user.
      */
     public void displayDukeTasks(DukeUiMessages ui) {
@@ -106,6 +109,7 @@ public class DukeTaskList {
     /**
      * Searches the user-supplied list of tasks for the input search terms. Then prints out tasks that matches the
      * search terms.
+     *
      * @param searchTerms Substring to search for in the entire task list.
      * @param ui duke.util.ui.DukeUiMessages object for displaying output to the user.
      */
@@ -128,6 +132,7 @@ public class DukeTaskList {
     /**
      * Checks if the specified task index has already been marked as complete. If it is not then mark the task as
      * complete and print out the name of this task.
+     *
      * @param taskIndexString Raw String index of the task following the printed list from running the "list" command.
      * @param ui duke.util.ui.DukeUiMessages object for displaying output to the user.
      * @param storage duke.util.DukeStorage object for updating the data file on the hard disk.

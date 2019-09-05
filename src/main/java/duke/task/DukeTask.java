@@ -8,6 +8,7 @@ public class DukeTask {
 
     /**
      * Constructor that takes in the task name followed by the task type.
+     *
      * @param taskName Task description of the {@link DukeTask}.
      * @param taskType Type of task.
      */
@@ -20,6 +21,7 @@ public class DukeTask {
     /**
      * Constructor that takes in the task name followed by a boolean whether a task is complete, followed by the
      * task type. This constructor is called during the tasklist reconstruction phase when reading from the data file.
+     *
      * @param taskName Task description of the {@link DukeTask}.
      * @param isComplete if the task is complete or not.
      * @param taskType Type of task.
@@ -32,6 +34,7 @@ public class DukeTask {
 
     /**
      * Gets the Task description of this {@link DukeTask}.
+     *
      * @return String containing the Task description.
      */
     public String getTaskName() {
@@ -40,6 +43,7 @@ public class DukeTask {
 
     /**
      * Gets the Task type of this {@link DukeTask}.
+     *
      * @return String containing the type of Task.
      */
     public String getTaskType() {
@@ -48,6 +52,7 @@ public class DukeTask {
 
     /**
      * Gets whether the Task is complete.
+     *
      * @return boolean stating if the Task is completed.
      */
     public boolean getTaskIsComplete() {
